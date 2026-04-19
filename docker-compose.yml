@@ -54,7 +54,7 @@ services:
     build:
       context: ../nolevel
     env_file:
-    - .env  
+    - ./nolevel_app/.env
     restart: always
     environment:
       EVOLUTION_API_URL: http://evolution-api:8080
