@@ -4,6 +4,8 @@ import { getSetores } from "@/app/hooks/setores"
 import { botIA } from "@/app/hooks/useIA";
 import { validarCpf, getMemoria, StatusChamado, enviarChamado } from "@/app/hooks/usedata";
 
+export const dynamic = "force-dynamic";
+
 const SETORES = await getSetores(process.env.NEXT_PUBLIC_CNPJ!) //recupera os setores da empresa usando o cnpj da mesma,podemos usar uma key ou uma autenticaçaço
 
 
