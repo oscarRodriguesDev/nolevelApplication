@@ -3,7 +3,7 @@ import OpenAI from "openai";
 
 
 //tudo abaixo precisa começar a ser informado na rota, para que a função hevelynIA fique mais limpa e focada apenas em gerar a resposta da IA, recebendo o contexto já processado.
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+
 const FlowState = {
   INICIO: "inicio",
   IDENTIFICACAO_CPF: "identificacao_cpf",
@@ -36,6 +36,7 @@ type UserSession = {
 
 
 export async function botIA(session: UserSession, userInput: string, instrucaoEtapa: string) {
+  const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
   const avisos = await buscarAvisos();
   const statusAtual = session.cpf ? await StatusChamado(session.cpf) : "Nenhum CPF informado";
   
