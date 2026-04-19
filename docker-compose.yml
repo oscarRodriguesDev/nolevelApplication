@@ -53,6 +53,8 @@ services:
   nolevel-bot:
     build:
       context: ../nolevel
+    env_file:
+    - .env  
     restart: always
     environment:
       EVOLUTION_API_URL: http://evolution-api:8080
