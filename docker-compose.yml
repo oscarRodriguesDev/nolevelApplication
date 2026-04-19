@@ -52,7 +52,7 @@ services:
 
   nolevel-bot:
     build:
-      context: ./nolevel
+      context: ./nolevel_app
     env_file:
     - ./nolevel_app/.env
     restart: always
