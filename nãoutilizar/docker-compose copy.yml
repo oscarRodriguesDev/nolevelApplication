@@ -54,7 +54,7 @@ services:
     build:
       context: ./nolevel_app
     env_file:
-      - ./nolevel_app/.env
+    - ./nolevel_app/.env
     restart: always
     environment:
       EVOLUTION_API_URL: http://evolution-api:8080
@@ -65,24 +65,11 @@ services:
     networks:
       - rede_gera
 
-  npm:
-    image: jc21/nginx-proxy-manager:latest
-    container_name: nginx-proxy-manager
-    restart: always
-    ports:
-      - "80:80"
-      - "81:81"
-      - "443:443"
-    volumes:
-      - ./npm/data:/data
-      - ./npm/letsencrypt:/etc/letsencrypt
-    networks:
-      - rede_gera
-
 volumes:
   evolution_evolution_store:
   evolution_evolution_instances:
   evolution_postgres_data:
+  
 
 networks:
   rede_gera:
