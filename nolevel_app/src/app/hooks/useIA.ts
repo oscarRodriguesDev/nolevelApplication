@@ -35,6 +35,7 @@ type UserSession = {
 
 
 
+/* 
 export async function botIA(session: UserSession, userInput: string, instrucaoEtapa: string) {
   const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
   const avisos = await buscarAvisos();
@@ -80,4 +81,35 @@ export async function botIA(session: UserSession, userInput: string, instrucaoEt
     })
     return response.choices[0].message.content || "Pode repetir, por favor?"
   } catch { return "Tive um probleminha técnico, mas pode continuar." }
+}
+ */
+
+export async function botIA(session: UserSession, userInput: string, instrucaoEtapa: string) {
+
+  const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY!
+  });
+
+  const avisos = await buscarAvisos();
+  const statusAtual = session.cpf
+    ? await StatusChamado(session.cpf)
+    : "Nenhum CPF informado";
+
+  try {
+    const response = await openai.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: [
+        {
+          role: "system",
+          content: `...`
+        },
+        { role: "user", content: userInput }
+      ],
+      temperature: 0.5
+    });
+
+    return response.choices[0].message.content || "Pode repetir, por favor?";
+  } catch {
+    return "Tive um probleminha técnico, mas pode continuar.";
+  }
 }
