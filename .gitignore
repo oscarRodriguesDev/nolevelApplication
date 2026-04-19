@@ -2,6 +2,9 @@
 
 # dependencies
 /node_modules
+/nolevel_app/modules
+/nolevel_app/node_modules
+/nolevel_app/next
 /.pnp
 .pnp.*
 .yarn/*
@@ -45,6 +48,26 @@ next-env.d.ts
 
 # Ignorar todas as pastas de webhook a partir da 8
 /src/generated/prisma
-.txt
+comandos.txt
 /evolution_api
 
+nolevel_app/node_modules/
+nolevel_app/.next/
+nolevel_app/out/
+nolevel_app/build/
+nolevel_app/coverage/
+
+nolevel_app/.env*
+nolevel_app/.vercel/
+
+nolevel_app/tarefas.txt
+
+nolevel_app/next-env.d.ts
+nolevel_app/*.tsbuildinfo
+
+nolevel_app/src/generated/prisma/
+
+nolevel_app/api/webhook17/
+nolevel_app/api/webhook20/
+nolevel_app/api/userFacil/
+nolevel_app/app/userFacil/
