@@ -42,7 +42,7 @@ services:
     image: postgres:15
     restart: always
     environment:
-      POSTGRES_DB: evolution_api
+      POSTGRES_DB: evolution-api
       POSTGRES_USER: evolution
       POSTGRES_PASSWORD: evolution2024
     volumes:
