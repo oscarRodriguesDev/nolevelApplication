@@ -50,6 +50,21 @@ services:
     networks:
       - rede_gera
 
+  nolevel-bot:
+    build:
+      context: ./nolevel_app
+    env_file:
+      - ./nolevel_app/.env
+    restart: always
+    environment:
+      EVOLUTION_API_URL: http://evolution-api:8080
+      EVOLUTION_API_KEY: 123456asdf
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+    depends_on:
+      - evolution-api
+    networks:
+      - rede_gera
+
   npm:
     image: jc21/nginx-proxy-manager:latest
     container_name: nginx-proxy-manager

@@ -24,7 +24,7 @@ export async function resolveTenant() {
   let slug: string | null = null
 
   if (host.includes("localhost")) {
-    slug = "dev-teste"
+    slug = "dev-testes"
   
   } else {
     const parts = host.split(".")
