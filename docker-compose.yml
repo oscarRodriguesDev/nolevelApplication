@@ -5,7 +5,7 @@ services:
     image: evoapicloud/evolution-api:v2.3.0
     restart: always
     environment:
-      SERVER_URL: https://api.seudominio.com
+      SERVER_URL: https://evolution.nolevel.hiskra.com.br
       AUTHENTICATION_TYPE: apikey
       AUTHENTICATION_API_KEY: 123456asdf
 
