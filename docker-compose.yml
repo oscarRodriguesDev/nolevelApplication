@@ -7,7 +7,7 @@ services:
     environment:
       SERVER_URL: https://evolution.nolevel.hiskra.com.br
       AUTHENTICATION_TYPE: apikey
-      AUTHENTICATION_API_KEY: 123456asdf
+      AUTHENTICATION_API_KEY: hiskra2026evolution
 
       DATABASE_ENABLED: "true"
       DATABASE_PROVIDER: postgresql
